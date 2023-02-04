@@ -1,0 +1,118 @@
+﻿<Window x:Class="Ado.Net_Homework2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ado.Net_Homework2"
+        mc:Ignorable="d"
+        Title="Library" 
+        Height="750"
+        Width="815"
+        WindowState="Normal"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" 
+               Content="BookLibrary"
+               Style="{StaticResource LblStyle}"
+               Foreground="Goldenrod"
+               />
+
+        <ScrollViewer Grid.Row="1" 
+                      VerticalScrollBarVisibility="Auto"
+                      HorizontalScrollBarVisibility="Auto">
+            <ListView SelectionMode="Single"
+                      Name="myListView"
+                      HorizontalContentAlignment="Center"
+                      VerticalContentAlignment="Center"
+                      ItemsSource="{Binding Books}"
+                      FontSize="10"
+                      >
+
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Id"
+                                        DisplayMemberBinding="{Binding Id}"
+                                        Width="50"/>
+                        <GridViewColumn Header="Name"
+                                        DisplayMemberBinding="{Binding Name}"
+                                        Width="100"/>
+                        <GridViewColumn Header="Pages"
+                                        DisplayMemberBinding="{Binding Pages}"
+                                        Width="50"/>
+                        <GridViewColumn Header="Press Year"
+                                        DisplayMemberBinding="{Binding YearPress}"
+                                        Width="50"/>
+                        <GridViewColumn Header="Comment"
+                                        DisplayMemberBinding="{Binding Comment}"
+                                        Width="100"/>
+                        <GridViewColumn Header="Quantity"
+                                        DisplayMemberBinding="{Binding Quantity}"
+                                        Width="50"/>
+                        <GridViewColumn Header="AuthorFullName"
+                                        DisplayMemberBinding="{Binding AuthorFullName}"
+                                        Width="100"/>
+
+                        <GridViewColumn Header="ThemesName"
+                                        DisplayMemberBinding="{Binding ThemesName}"
+                                        Width="100"/>
+
+                        <GridViewColumn Header="CategoryName"
+                                        DisplayMemberBinding="{Binding CategoryName}"
+                                        Width="100"/>
+
+                        <GridViewColumn Header="PressName"
+                                        DisplayMemberBinding="{Binding PressName}"
+                                        Width="100"/>
+
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+
+        </ScrollViewer>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    Click="Add_Click_2"
+                    Content="Add Book"
+                    Style="{StaticResource btnStyle}"
+                    />
+
+            <Button Grid.Column="1"
+                    Content="Update Book"
+                    Click="Update_Click_3"
+                    Style="{StaticResource btnStyle}"
+                    />
+
+
+            <Button Grid.Column="2"
+                    Content="Delete Book"
+                    Click="Delete_Click_1"
+                    Style="{StaticResource btnStyle}"
+                    />
+
+            <Button Grid.Column="3"
+                    Content="Show All Book"
+                    Click="ShowAll_Click"
+                    Style="{StaticResource btnStyle}"
+                    FontSize="25"
+                    />
+        </Grid>
+
+    </Grid>
+
+</Window>
