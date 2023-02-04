@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Library" 
         Height="750"
-        Width="815"
+        Width="1050"
         WindowState="Normal"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
@@ -27,54 +27,12 @@
         <ScrollViewer Grid.Row="1" 
                       VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Auto">
-            <ListView SelectionMode="Single"
-                      Name="myListView"
-                      HorizontalContentAlignment="Center"
-                      VerticalContentAlignment="Center"
+            <DataGrid SelectionMode="Single"
+                      Name="myDataGrid"
+                      
                       ItemsSource="{Binding Books}"
-                      FontSize="10"
-                      >
-
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Header="Id"
-                                        DisplayMemberBinding="{Binding Id}"
-                                        Width="50"/>
-                        <GridViewColumn Header="Name"
-                                        DisplayMemberBinding="{Binding Name}"
-                                        Width="100"/>
-                        <GridViewColumn Header="Pages"
-                                        DisplayMemberBinding="{Binding Pages}"
-                                        Width="50"/>
-                        <GridViewColumn Header="Press Year"
-                                        DisplayMemberBinding="{Binding YearPress}"
-                                        Width="50"/>
-                        <GridViewColumn Header="Comment"
-                                        DisplayMemberBinding="{Binding Comment}"
-                                        Width="100"/>
-                        <GridViewColumn Header="Quantity"
-                                        DisplayMemberBinding="{Binding Quantity}"
-                                        Width="50"/>
-                        <GridViewColumn Header="AuthorFullName"
-                                        DisplayMemberBinding="{Binding AuthorFullName}"
-                                        Width="100"/>
-
-                        <GridViewColumn Header="ThemesName"
-                                        DisplayMemberBinding="{Binding ThemesName}"
-                                        Width="100"/>
-
-                        <GridViewColumn Header="CategoryName"
-                                        DisplayMemberBinding="{Binding CategoryName}"
-                                        Width="100"/>
-
-                        <GridViewColumn Header="PressName"
-                                        DisplayMemberBinding="{Binding PressName}"
-                                        Width="100"/>
-
-                    </GridView>
-                </ListView.View>
-
-            </ListView>
+                      FontSize="10">
+            </DataGrid>
 
         </ScrollViewer>
 
