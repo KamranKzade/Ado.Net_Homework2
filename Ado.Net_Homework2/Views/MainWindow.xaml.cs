@@ -1,22 +1,9 @@
 ﻿using Ado.Net_Homework2.Models;
 using Ado.Net_Homework2.Views;
-using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Ado.Net_Homework2;
 
@@ -24,9 +11,6 @@ namespace Ado.Net_Homework2;
 
 public partial class MainWindow : Window
 {
-
-    DataTable table;
-    SqlDataReader reader;
     SqlDataAdapter da;
     DataSet set;
 
@@ -45,7 +29,13 @@ public partial class MainWindow : Window
 
     private void Update_Click_3(object sender, RoutedEventArgs e)
     {
-        UpdateBookWindow updateBook = new();
+        var obj = myDataGrid.SelectedItem;
+        var nese = obj as DataRowView;
+        var objects = nese!.Row.ItemArray;
+
+        Books books = new((int)objects[0], objects[1].ToString(), (int)objects[2], (int)objects[3], objects[4].ToString(), (int)objects[5], objects[6].ToString(), objects[7].ToString(), objects[8].ToString(), objects[8].ToString());
+      
+        UpdateBookWindow updateBook = new(books);
         updateBook.ShowDialog();
     }
 
